@@ -2,25 +2,27 @@
 .user-card {
   background: white;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   display: flex;
-  align-items: center;
+  align-items: center; /* Desktop: Sebelahan */
   gap: 16px;
   transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
 }
 
 /* Inactive State */
 .user-card.inactive {
-  opacity: 0.6;
-  background-color: #f8f9fa;
+  opacity: 0.7;
+  background-color: #f9f9f9;
 }
 
 /* Avatar Section */
 .user-avatar {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
 }
 
 .user-avatar img {
@@ -30,11 +32,11 @@
   object-fit: cover;
 }
 
-/* Status Indicator (for Active state) */
+/* Status Indicator */
 .status-indicator {
   position: absolute;
-  bottom: 2px;
-  right: 2px;
+  bottom: 0;
+  right: 0;
   width: 12px;
   height: 12px;
   background-color: #28a745;
@@ -45,43 +47,36 @@
 /* User Info Section */
 .user-info {
   flex: 1;
+  min-width: 0; /* Mencegah teks meluber */
 }
 
 .user-name {
   margin: 0 0 4px 0;
   color: #333;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-email {
   margin: 0 0 8px 0;
   color: #666;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* Role Badge */
 .user-role {
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
 }
 
-/* Role-specific Colors */
-.role-admin {
-  background-color: #e3f2fd;
-  color: #1976d2;
-}
-
-.role-user {
-  background-color: #f3e5f5;
-  color: #7b1fa2;
-}
-
-.role-moderator {
-  background-color: #e8f5e8;
-  color: #388e3c;
-}
+.role-admin { background-color: #e3f2fd; color: #1976d2; }
+.role-user { background-color: #f3e5f5; color: #7b1fa2; }
+.role-moderator { background-color: #e8f5e8; color: #388e3c; }
 
 /* Action Buttons Section */
 .user-actions {
@@ -89,31 +84,30 @@
   gap: 8px;
 }
 
+/* --- KHUSUS MOBILE (Wajib ada agar berubah) --- */
 @media (max-width: 600px) {
   .user-card {
-    flex-direction: column; /* Mobile: Tumpuk ke bawah */
+    flex-direction: column; /* Ubah jadi tumpuk ke bawah */
     align-items: flex-start; /* Rata kiri */
-    padding: 16px;
-  }
-
-  .user-avatar {
-    width: 50px; /* Sedikit kecilkan avatar */
-    height: 50px;
   }
 
   .user-info {
-    width: 100%; /* Full width */
-    margin-bottom: 12px;
+    width: 100%;
+    margin-bottom: 12px; /* Beri jarak antara info dan tombol */
+  }
+
+  .user-email {
+    white-space: normal; /* Biarkan email panjang turun ke baris baru */
+    word-break: break-all;
   }
 
   .user-actions {
     width: 100%;
     display: flex;
-    gap: 8px;
-    /* Opsional: Tombol jadi memanjang penuh di HP */
   }
   
   .user-actions button {
-    flex: 1; /* Tombol berbagi lebar rata */
+    flex: 1; /* Tombol melebar penuh agar mudah ditekan */
+    padding: 10px; /* Area sentuh lebih besar */
   }
 }

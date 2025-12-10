@@ -88,3 +88,32 @@
   display: flex;
   gap: 8px;
 }
+
+@media (max-width: 600px) {
+  .user-card {
+    flex-direction: column; /* Mobile: Tumpuk ke bawah */
+    align-items: flex-start; /* Rata kiri */
+    padding: 16px;
+  }
+
+  .user-avatar {
+    width: 50px; /* Sedikit kecilkan avatar */
+    height: 50px;
+  }
+
+  .user-info {
+    width: 100%; /* Full width */
+    margin-bottom: 12px;
+  }
+
+  .user-actions {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    /* Opsional: Tombol jadi memanjang penuh di HP */
+  }
+  
+  .user-actions button {
+    flex: 1; /* Tombol berbagi lebar rata */
+  }
+}

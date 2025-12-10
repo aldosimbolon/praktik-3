@@ -44,23 +44,18 @@ body {
   gap: 20px;
 }
 
-/* Media Queries (Responsive) */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .App-main {
-    padding: 20px 15px;
+    padding: 20px 16px; /* Padding lebih tipis di HP */
   }
 
   .section-header {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
+    flex-direction: column; /* Judul & Tombol jadi atas-bawah */
+    align-items: stretch;
+    gap: 12px;
   }
 
-  .section h2 {
+  .section-header h2 {
     font-size: 1.5rem;
-  }
-
-  .users-grid {
-    grid-template-columns: 1fr;
   }
 }

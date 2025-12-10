@@ -111,3 +111,24 @@
   padding: 48px;
   color: #666;
 }
+
+@media (max-width: 600px) {
+  .products-grid {
+    /* Ubah minmax jadi lebih kecil agar muat 2 kolom di layar HP (300px+) */
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px; /* Jarak antar produk lebih rapat */
+  }
+
+  .product-image {
+    height: 150px; /* Sesuaikan tinggi gambar di HP */
+  }
+  
+  .product-info {
+    padding: 10px;
+  }
+  
+  .add-to-cart-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

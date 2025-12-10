@@ -1,0 +1,113 @@
+.product-list {
+  padding: 20px;
+}
+
+.product-list h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Product Item Card */
+.product-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Product Image */
+.product-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Out of Stock Badge */
+.out-of-stock {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Product Info */
+.product-info {
+  padding: 16px;
+}
+
+/* Product Category */
+.product-category {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Product Name */
+.product-name {
+  margin: 8px 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Product Price */
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  margin: 8px 0 16px 0;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart-btn:hover:not(.disabled) {
+  background-color: #218838;
+}
+
+/* Disabled Button State */
+.add-to-cart-btn.disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Empty List Message */
+.product-list-empty {
+  text-align: center;
+  padding: 48px;
+  color: #666;
+}
